@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Tabuada JavaScript</h1>
+        <div class="form">
+            <div class="indbox">
+                <label style="color: #2b134b;">:)</label>
+            </div>
+            <label>Digite o número desejado</label>
+            <input type="text" name="n1" id="tabu" placeholder="Digite um número">
+            
+            <div class="btn-center">
+                <select name="" id="select1">
+                    <option value="+">Soma</option>
+                    <option value="-">Subtração</option>
+                    <option value="*">Multiplicação</option>
+                    <option value="/">Divisão</option>
+                </select>
+                <button id="botao" onclick="botao()">Enviar</button>
+                <button id="botao-red" onclick="limpar()">Limpar</button>
+            </div>
+            <div class="resultado">
+                <p id="receba"></p>
+            </div>
+            <script>
+                function botao() {
+                    let tabuada = [4];
+                    tabuada[0] = Number(document.querySelector("#tabu").value);
+                    tabuada[2] = document.querySelector("#receba");
+                    tabuada[1] = document.querySelector("#select1").value;
+
+                    if (tabuada[0] === 0) {
+                        alert("Error!!\nCampo vazio ou número igual a 0");
+                    }else {
+                        tabuada[2].innerHTML = ("");
+                        switch (tabuada[1]) {
+                            case "+":
+                                for (i = 0;  i <= 10;  i++) {
+                                    tabuada[3] = Number(tabuada[0]+i);
+                                    tabuada[2].innerHTML += (`${tabuada[0]} + ${i} = ${tabuada[3]}<br>`);
+                                }
+                                break;
+                            case "-":
+                                for (i = 0;  i <= 10;  i++) {
+                                    tabuada[3] = Number((tabuada[0]+i) - tabuada[0]);
+                                    tabuada[2].innerHTML += (`${tabuada[0]+i} - ${tabuada[0]} = ${tabuada[3]}<br>`);
+                                }
+                                break;
+                            case "*":
+                                for (i = 0;  i <= 10;  i++) {
+                                        tabuada[3] = Number(tabuada[0]*i);
+                                        tabuada[2].innerHTML += (`${tabuada[0]} x ${i} = ${tabuada[3]}<br>`);
+                                    }
+                                break;
+                            case "/":
+                                for (i = 0;  i <= 10;  i++) {
+                                    tabuada[3] = Number((tabuada[0]*i)/tabuada[0]);
+                                    tabuada[2].innerHTML += (`${tabuada[0]*i} ÷ ${tabuada[0]} = ${tabuada[3]}<br>`);
+                                }
+                                break;
+                        }
+                    }
+                }
+
+                function limpar() {
+                        let limpar = document.querySelector("#receba");
+                        limpar.innerHTML = ("");
+                    }
+            </script>
+        </div>
+    </main>
+</body>
+</html>
