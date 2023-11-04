@@ -1,6 +1,6 @@
 # TabuadaJs-CSS
 
-URL do projeto: https://douradoalt.github.io/TabuadaJs-CSS/
+URL do projeto: https://douradoctrl.github.io/TabuadaJs-CSS/
 
 ### Ferramentas
 
